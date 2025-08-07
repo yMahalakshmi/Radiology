@@ -79,7 +79,6 @@
 .delay {
   animation-delay: 1.5s;
 }
-
 @keyframes zoomInOutSpread {
   0% {
     transform: scale(1) translate(0, 0);

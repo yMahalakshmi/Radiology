@@ -1,0 +1,101 @@
+/* Zoom and fade-in animation
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.section-loading .loading-child {
+  animation: zoomFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.section-loading .loading-child:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.section-loading .loading-child:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.section-loading .loading-child:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.section-loading .loading-child:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.section-loading .loading-child:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.loading-child {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.loading-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #9AAE96;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease-in-out;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.loading-child:hover::before {
+  transform: scaleY(1);
+}
+
+.loading-child > * {
+  position: relative;
+  z-index: 10;
+} */
+/* ---------------------------------------------------------- */
+.card-shape {
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.bounce {
+  animation: bounceUpDown 3s ease-in-out infinite;
+}
+
+.delay {
+  animation-delay: 1.5s;
+}
+
+@keyframes zoomInOutSpread {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.2;
+  }
+  40% {
+    transform: scale(1.1) translate(var(--x), var(--y));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.card-animate {
+  animation: zoomInOutSpread 1.8s ease-in-out forwards;
+}
+/* ----------------------------------------------------------- */

@@ -38,15 +38,15 @@ export default function Footer() {
         <div>
           <h3 className="text-xl text-[#E5B8A8] font-semibold mb-6">Quick Links</h3>
           <ul className="text-white text-sm space-y-3">
-            <li><Link to="/home#home" className="hover:text-[#F7A582]">Home</Link></li>
-            <li><Link to="/home#about" className="hover:text-[#F7A582]">About Us</Link></li>
+            <li><Link to="/home#home" className="hover:text-[#E5B8A8]">Home</Link></li>
+            <li><Link to="/home#about" className="hover:text-[#E5B8A8]">About Us</Link></li>
             <li className="font-semibold">Services</li>
             <ul className="ml-4 space-y-2 text-sm">
-              <li><Link to="/functional" className="hover:text-[#F7A582]">Functional Medicine</Link></li>
-              <li><Link to="/teleradiology" className="hover:text-[#F7A582]">Teleradiology</Link></li>
+              <li><Link to="/functional" className="hover:text-[#E5B8A8]">Functional Medicine</Link></li>
+              <li><Link to="/teleradiology" className="hover:text-[#E5B8A8]">Teleradiology</Link></li>
             </ul>
-            <li><Link to="/home#pages" className="hover:text-[#F7A582]">Blogs</Link></li>
-            <li><Link to="/home#contact" className="hover:text-[#F7A582]">Contact Us</Link></li>
+            <li><Link to="/home#pages" className="hover:text-[#E5B8A8]">Blogs</Link></li>
+            <li><Link to="/home#contact" className="hover:text-[#E5B8A8]">Contact Us</Link></li>
             {/* <li><Link to="/terms#terms" className="hover:text-[#F7A582]">Terms & Refund Policy</Link></li>
             <li><Link to="/privacy-policy#privacy" className="hover:text-[#F7A582]">Privacy Policy</Link></li> */}
           </ul>

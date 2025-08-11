@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import doctor from '../../assets/Functional/doctor1.webp';
 import { motion } from 'framer-motion';
 import logo from '../../assets/Functional/doctor.webp';
 import { FaYoutube } from 'react-icons/fa';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-type SectionCardProps = {
-  title: string;
-  description: string;
-  img: string;
-};
+// type SectionCardProps = {
+//   title: string;
+//   description: string;
+//   img: string;
+// };
 
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
+// interface FAQItemProps {
+//   question: string;
+//   answer: string;
+// }
 
-interface Testimonial {
-  name: string;
-  text: string;
-  date: string;
-  initial: string;
-  color: string;
-  image: string | null;
-}
 
 const testimonials = [
   {
@@ -68,7 +60,7 @@ const testimonials = [
   }
 ];
 
-const faqs: FAQItemProps[] = [
+const faqs = [
   {
     question: 'What is Functional, Lifestyle, and Integrative Medicine?',
     answer:
@@ -92,7 +84,7 @@ const faqs: FAQItemProps[] = [
   },
 ];
 
-const FAQItem = ({ question, answer }: FAQItemProps) => {
+const FAQItem = ({ question, answer }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -113,7 +105,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
   );
 };
 
-const SectionCard = ({ title, description, img }: SectionCardProps) => (
+const SectionCard = ({ title, description, img }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +128,7 @@ const Functional = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   // All functions should be defined inside the component
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentIndex(index);
   };
 
@@ -246,7 +238,6 @@ const Functional = () => {
         </div>
       </section>
 
-      {/* YouTube Section */}
       <section className="py-16 px-6 md:px-20 bg-[#F5F8F3]">
         <div className="max-w-4xl mx-auto text-center">
           <a

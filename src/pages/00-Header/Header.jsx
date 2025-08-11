@@ -4,8 +4,8 @@ import logo from "../../assets/logowell.jpg";
 
 export default function Header() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState<string | null>(null);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const [active, setActive] = useState("Home");
   const navigate = useNavigate();
   const location = useLocation();
@@ -41,7 +41,7 @@ export default function Header() {
     scrollToSection();
   }, [location.hash]);
 
-  const handleNavigation = (path: string) => {
+  const handleNavigation = (path) => {
     const [route] = path.split("#");
     if (location.pathname !== route) {
       navigate(route);
@@ -55,9 +55,10 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full min-h-[4vh] bg-[#9AAE96] shadow-md">
-    <div className="w-full px-4 md:px-8 lg:px-10 py-4 md:py-6 lg:py-8 flex items-center justify-between">
-
+    <header className="fixed top-0 z-50 w-full min-h-[4vh] bg-[#9AAE96] shadow-md">
+    <div className="w-full px-4 sm:px-6 lg:px-10   py-2 flex justify-between items-center">
+{/* <header className="w-full fixed top-0 z-50 bg-white shadow-md border-b border-gray-200 ">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-3 flex justify-between items-center"> */}
         {/* Logo */}<Link to="/" className="flex items-center mr-auto">
 
           <img src={logo} alt="Logo" className="h-[72px] md:h-20 lg:h-[40px]" />
@@ -76,8 +77,8 @@ export default function Header() {
                     )
                   }
                   className={`flex items-center gap-1 transition ${
-                    active === item.id ? "text-[#F7A582]" : "text-white"
-                  } hover:text-[#F7A582]`}
+                    active === item.id ? "text-[#E5B8A8]" : "text-white"
+                  } hover:text-[#E5B8A8]`}
                 >
                   {item.name}
                   <span>{desktopDropdownOpen === item.name ? "▲" : "▼"}</span>
@@ -89,7 +90,7 @@ export default function Header() {
                         key={subItem.name}
                         to={subItem.id}
                         onClick={() => handleNavigation(subItem.id)}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F7A582] hover:text-white transition"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E5B8A8] hover:text-white transition"
                       >
                         {subItem.name}
                       </Link>
@@ -103,8 +104,8 @@ export default function Header() {
                 to={item.id}
                 onClick={() => handleNavigation(item.id)}
                 className={`transition ${
-                  active === item.id ? "text-[#F7A582]" : "text-white"
-                } hover:text-[#F7A582]`}
+                  active === item.id ? "text-[#E5B8A8]" : "text-white"
+                } hover:text-[#E5B8A8]`}
               >
                 {item.name}
               </Link>
@@ -133,8 +134,8 @@ export default function Header() {
                       )
                     }
                     className={`transition font-semibold flex items-center gap-1 ${
-                      active === item.id ? "text-[#F7A582]" : "text-white"
-                    } hover:text-[#F7A582]`}
+                      active === item.id ? "text-[#E5B8A8]" : "text-white"
+                    } hover:text-[#E5B8A8]`}
                   >
                     {item.name}
                     <span>{mobileDropdownOpen === item.name ? "▲" : "▼"}</span>
@@ -157,8 +158,8 @@ export default function Header() {
                   to={item.id}
                   onClick={() => handleNavigation(item.id)}
                   className={`transition ${
-                    active === item.id ? "text-[#F7A582]" : "text-white"
-                  } hover:text-[#F7A582]`}
+                    active === item.id ? "text-[#E5B8A8]" : "text-white"
+                  } hover:text-[#E5B8A8]`}
                 >
                   {item.name}
                 </Link>
